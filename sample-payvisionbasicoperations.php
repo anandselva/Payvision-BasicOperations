@@ -24,15 +24,24 @@ require_once dirname(__FILE__) . '/PayvisionBasicOperationsAutoload.php';
  * Each option matches the {@link http://www.php.net/manual/en/soapclient.soapclient.php} options
  * 
  * Here is below an example of how you can set the array:
- * $wsdl = array();
- * $wsdl[PayvisionBasicOperationsWsdlClass::WSDL_URL] = 'https://testprocessor.payvisionservices.com/Gateway/BasicOperations.asmx?WSDL';
- * $wsdl[PayvisionBasicOperationsWsdlClass::WSDL_CACHE_WSDL] = WSDL_CACHE_NONE;
- * $wsdl[PayvisionBasicOperationsWsdlClass::WSDL_TRACE] = true;
- * $wsdl[PayvisionBasicOperationsWsdlClass::WSDL_LOGIN] = 'myLogin';
- * $wsdl[PayvisionBasicOperationsWsdlClass::WSDL_PASSWD] = '**********';
- * etc....
+ * */
+ 
+ /**
+ * RecurringOperations Informations
+ */
+define('PAYVISIONBASICOPERATIONS_WSDL_URL', 'https://testprocessor.payvisionservices.com/Gateway/BasicOperations.asmx?WSDL');
+define('PAYVISIONBASICOPERATIONS_USER_LOGIN','');
+define('PAYVISIONBASICOPERATIONS_USER_PASSWORD','');
+
+$wsdl = array();
+$wsdl[PayvisionRecurringOperationsWsdlClass::WSDL_URL] = PAYVISIONBASICOPERATIONS_WSDL_URL;
+$wsdl[PayvisionRecurringOperationsWsdlClass::WSDL_CACHE_WSDL] = WSDL_CACHE_NONE;
+$wsdl[PayvisionRecurringOperationsWsdlClass::WSDL_TRACE] = true;
+$wsdl[PayvisionRecurringOperationsWsdlClass::WSDL_LOGIN] = PAYVISIONBASICOPERATIONS_USER_LOGIN;
+$wsdl[PayvisionRecurringOperationsWsdlClass::WSDL_PASSWD] = PAYVISIONBASICOPERATIONS_USER_PASSWORD;
+ /* etc....
  * Then instantiate the Service class as: 
- * - $wsdlObject = new PayvisionBasicOperationsWsdlClass($wsdl);
+ * - $wsdlObject = new PayvisionRecurringOperationsWsdlClass($wsdl);
  */
 /**
  * Examples
